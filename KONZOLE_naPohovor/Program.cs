@@ -13,6 +13,57 @@
 
 
 
+////9.
+////Pohovorová otázka: "Jaký je rozdíl mezi operátorem přetypování a AS?"
+////Odpověď: Při neúspěšné konverzi vyvolá operátor přetypování výjimku, zatímco AS vrátí NULL: 
+
+//Employee emp = new Employee { ID = 101, Name = "Mark" };
+//PermanentEmployee permanentEmployee = (PermanentEmployee)emp; //výjimka
+//PermanentEmployee permanentEmployee1 = emp as PermanentEmployee; //NULL
+//public class Employee
+//{
+//    public int ID { get; set; }
+//    public string Name { get; set; }
+//}
+
+//public class PermanentEmployee : Employee
+//{
+
+//}
+
+
+
+////8.
+////Pohovorová otázka: "Dá se zavolat abstraktní metoda z konstruktoru abstraktní třídy?"
+////Odpověď: Ano - implementaci abstraktní třídy dodá potomek a při vytváření instance potomka se spustí
+////rodičovský konstruktor s metodou jejíž implementaci potomek dodal:
+//CorporateCustomer CC = new CorporateCustomer();
+//SavingsCustomer SC = new SavingsCustomer();
+
+//public abstract class Customer
+//{
+//    public Customer()
+//    {
+//        Print();
+//    }
+//    public abstract void Print();
+//}
+
+//public class CorporateCustomer : Customer
+//{
+//    public override void Print()
+//    {
+//        Console.WriteLine("CorporateCustomer PRINT");
+//    }
+//}
+
+//public class SavingsCustomer : Customer
+//{
+//    public override void Print()
+//    {
+//        Console.WriteLine("SavingsCustomer PRINT");
+//    }
+//}
 
 
 
@@ -20,16 +71,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+//7. 
+//Pohovorová otázka: "Může mít abstraktní třída konstruktor?"
+//Odpověď: Ano - abstraktní třída může mít konstruktor - zpravidla se používá k inicializování vlastností 
+//např. ID (this._id = Guid.NewGuid();) má-li dojít k inicializaci před vytvořením instance potomka. Nebo lze takto spustit kód, který
+//je relevantní pro všechny potomky.
+//Dobrou praktikou je označovat konstruktor abstraktní třídy "protected" ("public" nemá smysl, když sama abstraktní třída konstruktor nevyužije)...
 
 
 
