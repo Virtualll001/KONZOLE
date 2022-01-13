@@ -13,6 +13,76 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+//12. 
+//Pohovorová otázka: "Jaký je modifikátor přístupu defaultního konstruktoru v C#"
+//Odpověď: Nevytvoříme-li třídě konstuktor explicitně, má defaultně bezparametrický konstruktor s modifikátorem přístupu Public.
+//
+
+
+
+
+
+
+
+////11.
+////Pohovorová otázka: "Máme abstraktní třídu s metodou která obsahuje základní implementaci. Někteří potomci 
+////potřebují tuto implementaci, ale jiní potřebují jinou..."
+////Odpověď: 
+
+//Potomek1 pot1 = new Potomek1();
+//Potomek2 pot2 = new Potomek2();
+//pot1.CvicnaMetoda();
+//pot2.CvicnaMetoda();
+
+//public class Potomek2 : AbstraktniTrida
+//{
+//    public override void CvicnaMetoda()
+//    {
+//        //potomek si upravil metodu předka podle své potřeby
+//        Console.WriteLine("Jiná implementace...");
+//    }
+//}
+//public class Potomek1 : AbstraktniTrida
+//{
+//    //potomek má k dispozici Defaultní implementaci svého předka
+//}
+
+//public abstract class AbstraktniTrida
+//{
+//    public virtual void CvicnaMetoda()
+//    {
+//        Console.WriteLine("Defaultní implementace!");
+//    }
+//}
+
+
+
+
+
+
+////10.
+////Pohovorová otázka: "Jak převrátit písmena ve slovech dané věty?"
+////Odpověď:
+//string inputString = "one two three four five";
+//string result = string.Join(' ', inputString.Split(' ').Select(x => new String(x.Reverse().ToArray())));
+//Console.WriteLine(result);
+
+
+
+
+
+
 ////9.
 ////Pohovorová otázka: "Jaký je rozdíl mezi operátorem přetypování a AS?"
 ////Odpověď: Při neúspěšné konverzi vyvolá operátor přetypování výjimku, zatímco AS vrátí NULL: 
